@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\TrabalhoDevOpsInfnet.Data\TrabalhoDevOpsInfnet.Data.csproj" />
-    <ProjectReference Include="..\src\TrabalhoDevOpsInfnet.Domain\TrabalhoDevOpsInfnet.Domain.csproj" />
+    <ProjectReference Include="..\TrabalhoDevOpsInfnet.Data\TrabalhoDevOpsInfnet.Data.csproj" />
+    <ProjectReference Include="..\TrabalhoDevOpsInfnet.Domain\TrabalhoDevOpsInfnet.Domain.csproj" />
   </ItemGroup>
 
 </Project>

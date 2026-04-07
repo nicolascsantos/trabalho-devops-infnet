@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\TrabalhoDevOpsInfnet.Application\TrabalhoDevOpsInfnet.Application.csproj" />
+    <ProjectReference Include="..\TrabalhoDevOpsInfnet.Application\TrabalhoDevOpsInfnet.Application.csproj" />
     <ProjectReference Include="..\TrabalhoDevOpsInfnet.Data\TrabalhoDevOpsInfnet.Data.csproj" />
   </ItemGroup>
 
