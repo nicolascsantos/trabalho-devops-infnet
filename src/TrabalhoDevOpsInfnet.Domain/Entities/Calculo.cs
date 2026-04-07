@@ -38,7 +38,16 @@ namespace TrabalhoDevOpsInfnet.Domain.Entities
 
 
         public decimal CalcularJurosCompostos()
-            => ValorInicial * (decimal)Math.Pow((double)(1 + TaxaJuros), QuantidadePeriodo);
+            => CalcularMontantePrincipal() + CalcularMontanteAportes();
+
+        private decimal FatorJuros()
+            => (decimal)Math.Pow((double)(1 + TaxaJuros), QuantidadePeriodo);
+
+        private decimal CalcularMontantePrincipal()
+            => ValorInicial * FatorJuros();
+
+        private decimal CalcularMontanteAportes()
+            => ValorMensal * ((FatorJuros() - 1) / TaxaJuros);
 
 
         private void Validar()

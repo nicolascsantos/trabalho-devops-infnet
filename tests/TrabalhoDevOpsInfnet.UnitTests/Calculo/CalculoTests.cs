@@ -11,10 +11,9 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
         {
             // Arrange
             var valorInicial = 1000m;
-            var valorMensal = 2000m;
-            var taxaJuros = 0.05m; // 5% ao mês
+            var valorMensal = 200m;
+            var taxaJuros = 0.01m; // 1% ao mês
             var quantidadePeriodo = 12;
-
 
             // Act
             var calculo = new Entidades.Calculo(
@@ -29,7 +28,11 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
             var resultadoCalculo = calculo.CalcularJurosCompostos();
 
             // Assert
-            var valorEsperado = valorInicial * (decimal)Math.Pow((double)(1 + taxaJuros), quantidadePeriodo);
+            var fatorJuros = (decimal)Math.Pow((double)(1 + taxaJuros), quantidadePeriodo);
+            var montantePrincipal = valorInicial * fatorJuros;
+            var montanteAportes = valorMensal * ((fatorJuros - 1) / taxaJuros);
+            var valorEsperado = montantePrincipal + montanteAportes;
+
             Assert.Equal(valorEsperado, resultadoCalculo);
         }
 
