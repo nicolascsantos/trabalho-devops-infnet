@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/TrabalhoDevOpsInfnet.Data/TrabalhoDevOpsInfnet.Data.csproj" Id="d28cca02-4eef-47c7-a443-77ee22274eaa" />
     <Project Path="src/TrabalhoDevOpsInfnet.Domain/TrabalhoDevOpsInfnet.Domain.csproj" Id="e6eeabfc-0482-438a-879e-cde216aacc85" />
   </Folder>
   <Folder Name="/tests/">
