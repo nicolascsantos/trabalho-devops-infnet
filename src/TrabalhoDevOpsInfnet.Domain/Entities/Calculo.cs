@@ -51,6 +51,9 @@ namespace TrabalhoDevOpsInfnet.Domain.Entities
 
             if (TaxaJuros <= 0)
                 throw new DomainValidationException($"{nameof(TaxaJuros)} deve ser maior que zero.");
+
+            if (QuantidadePeriodo <= 0)
+                throw new DomainValidationException($"{nameof(QuantidadePeriodo)} deve ser maior que zero.");
         }
     }
 }
