@@ -1,0 +1,6 @@
+@TrabalhoDevOpsInfnet.API_HostAddress = http://localhost:5267
+
+GET {{TrabalhoDevOpsInfnet.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
