@@ -53,16 +53,16 @@ namespace TrabalhoDevOpsInfnet.Domain.Entities
         private void Validar()
         {
             if (ValorInicial <= 0)
-                throw new DomainValidationException($"{nameof(ValorInicial)} deve ser maior que zero.");
+                throw new EntityValidationException($"{nameof(ValorInicial)} deve ser maior que zero.");
 
             if (ValorMensal <= 0)
-                throw new DomainValidationException($"{nameof(ValorMensal)} deve ser maior que zero.");
+                throw new EntityValidationException($"{nameof(ValorMensal)} deve ser maior que zero.");
 
             if (TaxaJuros <= 0)
-                throw new DomainValidationException($"{nameof(TaxaJuros)} deve ser maior que zero.");
+                throw new EntityValidationException($"{nameof(TaxaJuros)} deve ser maior que zero.");
 
             if (QuantidadePeriodo <= 0)
-                throw new DomainValidationException($"{nameof(QuantidadePeriodo)} deve ser maior que zero.");
+                throw new EntityValidationException($"{nameof(QuantidadePeriodo)} deve ser maior que zero.");
         }
     }
 }

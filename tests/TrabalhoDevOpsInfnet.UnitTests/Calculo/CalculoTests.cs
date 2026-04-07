@@ -10,9 +10,9 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
         public void CalcularJurosCompostos()
         {
             // Arrange
-            var valorInicial = 1000m;
-            var valorMensal = 200m;
-            var taxaJuros = 0.01m; // 1% ao mês
+            var valorInicial = 100m;
+            var valorMensal = 100m;
+            var taxaJuros = 0.0125m; // 1% ao mês
             var quantidadePeriodo = 12;
 
             // Act
@@ -50,7 +50,7 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
             // Act
 
             // Assert
-            var exception = Assert.Throws<DomainValidationException>(
+            var exception = Assert.Throws<EntityValidationException>(
                 () => new Entidades.Calculo(
                     valorInicial,
                     valorMensal,
@@ -77,7 +77,7 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
             // Act
 
             // Assert
-            var exception = Assert.Throws<DomainValidationException>(
+            var exception = Assert.Throws<EntityValidationException>(
                 () => new Entidades.Calculo(
                     valorInicial,
                     valorMensal,
