@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="env/jenkins-docker-compose.yaml" />
+    <File Path="README.md" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/TrabalhoDevOpsInfnet.API/TrabalhoDevOpsInfnet.API.csproj" Id="0bcd917a-4307-4e19-ad22-e730aeb82eca" />
     <Project Path="src/TrabalhoDevOpsInfnet.Data/TrabalhoDevOpsInfnet.Data.csproj" Id="d28cca02-4eef-47c7-a443-77ee22274eaa" />
