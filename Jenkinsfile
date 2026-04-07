@@ -1,5 +1,10 @@
 pipeline {
-    agent any // Pode ser substituido por um container Docker com o SDK do .NET, se a infra permitir.
+    agent {
+        docker {
+            image 'mcr.microsoft.com/dotnet/sdk:10.0'
+            args '-u root'
+        }
+    }
 
     stages {
         stage('Checkout') {
