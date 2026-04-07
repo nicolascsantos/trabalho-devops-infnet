@@ -11,7 +11,7 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
         {
             // Arrange
             var valorInicial = 2500m;
-            var valorMensal = 0m;
+            var valorMensal = 100m;
             var taxaJuros = 0.02m; // 1% ao mês
             var quantidadePeriodo = 2;
 
