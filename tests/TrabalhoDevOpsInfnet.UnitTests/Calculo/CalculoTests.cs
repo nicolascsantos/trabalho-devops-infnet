@@ -10,10 +10,10 @@ namespace TrabalhoDevOpsInfnet.UnitTests.Calculo
         public void CalcularJurosCompostos()
         {
             // Arrange
-            var valorInicial = 100m;
-            var valorMensal = 100m;
-            var taxaJuros = 0.0125m; // 1% ao mês
-            var quantidadePeriodo = 12;
+            var valorInicial = 2500m;
+            var valorMensal = 0m;
+            var taxaJuros = 0.02m; // 1% ao mês
+            var quantidadePeriodo = 2;
 
             // Act
             var calculo = new Entidades.Calculo(
