@@ -1,5 +1,5 @@
 pipeline {
-    agents any // Pode ser substituido por um container Docker com o SDK do .NET, se a infra permitir.
+    agent any // Pode ser substituido por um container Docker com o SDK do .NET, se a infra permitir.
 
     stages {
         stage('Checkout') {
