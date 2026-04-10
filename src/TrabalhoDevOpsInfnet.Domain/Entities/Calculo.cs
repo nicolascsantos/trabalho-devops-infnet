@@ -38,7 +38,7 @@ namespace TrabalhoDevOpsInfnet.Domain.Entities
 
 
         public decimal CalcularJurosCompostos()
-            => CalcularMontantePrincipal() + CalcularMontanteAportes();
+            => Math.Round(CalcularMontantePrincipal() + CalcularMontanteAportes(), 2);
 
         private decimal FatorJuros()
             => (decimal)Math.Pow((double)(1 + TaxaJuros), QuantidadePeriodo);
