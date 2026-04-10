@@ -42,7 +42,7 @@ pipeline {
         stage('Publish') {
             steps {
                 echo 'Empacotando a API para deploy'
-                sh 'dotnet publish /src/TrabalhoDevOpsInfnet.API/TrabalhoDevOpsInfnet.API.csproj -c Release -o ./publish-output'
+                sh 'dotnet publish ./src/TrabalhoDevOpsInfnet.API/TrabalhoDevOpsInfnet.API.csproj -c Release -o ./publish-output'
             }
         }
 
