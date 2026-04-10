@@ -58,7 +58,7 @@ pipeline {
                     sh 'scp -i $SSH_KEY -r ./publish-output/* ${SSH_USER}@${AWS_IP}:/var/www/trabalho-devops-infnet/'
 
                     echo 'Reiniciando os serviços da API...'
-                    sh 'ssh -i $SSH-KEY ${SSH_USER}@${AWS_IP} "sudo systemctl restart webapi"'
+                    sh 'ssh -i $SSH_KEY ${SSH_USER}@${AWS_IP} "sudo systemctl restart webapi"'
                 }
             }
         }
