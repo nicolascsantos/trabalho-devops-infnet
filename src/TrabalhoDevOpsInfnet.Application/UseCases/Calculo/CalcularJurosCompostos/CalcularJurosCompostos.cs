@@ -18,9 +18,17 @@ namespace TrabalhoDevOpsInfnet.Application.UseCases.Calculo.CalcularJurosCompost
                 request.TipoPeriodo
             );
 
-            var resultado = calculo.CalcularJurosCompostos();
+            var resultados = calculo.CalcularJurosCompostos()
+                .Select(r => new ResultadoMensalOutput(
+                    r.Mes,
+                    r.Juros,
+                    r.TotalInvestido,
+                    r.TotalJuros,
+                    r.TotalAcumulado
+                ))
+                .ToList();
 
-            return Task.FromResult(new CalcularJurosCompostosOutput(resultado));
+            return Task.FromResult(new CalcularJurosCompostosOutput(resultados));
         }
     }
 }

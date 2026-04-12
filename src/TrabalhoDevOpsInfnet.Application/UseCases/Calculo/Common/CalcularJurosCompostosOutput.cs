@@ -1,12 +1,23 @@
-﻿namespace TrabalhoDevOpsInfnet.Application.UseCases.Calculo.Common
+namespace TrabalhoDevOpsInfnet.Application.UseCases.Calculo.Common
 {
     public class CalcularJurosCompostosOutput
     {
-        public decimal Resultado { get; private set; }
-
-        public CalcularJurosCompostosOutput(decimal resultado)
+        public CalcularJurosCompostosOutput(IReadOnlyList<ResultadoMensalOutput> resultados)
         {
-            Resultado = resultado;
+            Resultados = resultados;
+
+            var ultimo = resultados[^1];
+            TotalInvestidoFinal = ultimo.TotalInvestido;
+            TotalJurosFinal = ultimo.TotalJuros;
+            TotalAcumuladoFinal = ultimo.TotalAcumulado;
         }
+
+        public IReadOnlyList<ResultadoMensalOutput> Resultados { get; private set; }
+
+        public decimal TotalInvestidoFinal { get; private set; }
+
+        public decimal TotalJurosFinal { get; private set; }
+
+        public decimal TotalAcumuladoFinal { get; private set; }
     }
 }

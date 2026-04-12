@@ -37,17 +37,31 @@ namespace TrabalhoDevOpsInfnet.Domain.Entities
         public TipoPeriodoEnum TipoPeriodo { get; private set; }
 
 
-        public decimal CalcularJurosCompostos()
-            => Math.Round(CalcularMontantePrincipal() + CalcularMontanteAportes(), 2);
+        public IReadOnlyList<ResultadoMensal> CalcularJurosCompostos()
+        {
+            var resultados = new List<ResultadoMensal>(QuantidadePeriodo);
+            var saldo = ValorInicial;
+            var totalInvestido = ValorInicial;
+            var totalJuros = 0m;
 
-        private decimal FatorJuros()
-            => (decimal)Math.Pow((double)(1 + TaxaJuros), QuantidadePeriodo);
+            for (var mes = 1; mes <= QuantidadePeriodo; mes++)
+            {
+                var jurosDoMes = saldo * TaxaJuros;
+                saldo += jurosDoMes + ValorMensal;
+                totalInvestido += ValorMensal;
+                totalJuros += jurosDoMes;
 
-        private decimal CalcularMontantePrincipal()
-            => ValorInicial * FatorJuros();
+                resultados.Add(new ResultadoMensal(
+                    mes,
+                    Math.Round(jurosDoMes, 2),
+                    Math.Round(totalInvestido, 2),
+                    Math.Round(totalJuros, 2),
+                    Math.Round(saldo, 2)
+                ));
+            }
 
-        private decimal CalcularMontanteAportes()
-            => ValorMensal * ((FatorJuros() - 1) / TaxaJuros);
+            return resultados;
+        }
 
 
         private void Validar()

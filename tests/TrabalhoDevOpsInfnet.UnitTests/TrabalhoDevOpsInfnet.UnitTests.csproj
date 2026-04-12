@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TrabalhoDevOpsInfnet.Domain\TrabalhoDevOpsInfnet.Domain.csproj" />
+    <ProjectReference Include="..\..\src\TrabalhoDevOpsInfnet.Application\TrabalhoDevOpsInfnet.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
