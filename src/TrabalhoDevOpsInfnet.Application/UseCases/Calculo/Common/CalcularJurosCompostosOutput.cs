@@ -19,5 +19,7 @@ namespace TrabalhoDevOpsInfnet.Application.UseCases.Calculo.Common
         public decimal TotalJurosFinal { get; private set; }
 
         public decimal TotalAcumuladoFinal { get; private set; }
+
+        public string Teste { get; set; }
     }
 }

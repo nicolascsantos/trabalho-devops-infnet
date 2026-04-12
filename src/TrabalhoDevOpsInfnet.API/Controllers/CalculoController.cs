@@ -19,6 +19,7 @@ namespace TrabalhoDevOpsInfnet.API.Controllers
         public async Task<IActionResult> CalcularJurosCompostos([FromBody] CalcularJurosCompostosInput input, CancellationToken cancellationToken)
         {
             var output = await _mediator.Send(input, cancellationToken);
+            output.Teste = "Instituto Infnet";
             return Ok(new APIResponse<CalcularJurosCompostosOutput>(output));
         }
     }
