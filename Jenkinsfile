@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        AWS_IP = "98.87.157.171"
+        AWS_IP = "54.81.254.28"
     }
 
     stages {
