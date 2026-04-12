@@ -36,6 +36,7 @@ pipeline {
             steps {
                 echo 'Executando a suite de testes unitários'
                 sh 'dotnet test --configuration Release --no-build --verbosity normal'
+                sh ' dotnet test --collect:"XPlat Code Coverage"'
             }
         }
 
